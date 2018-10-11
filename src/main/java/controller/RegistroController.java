@@ -1,6 +1,7 @@
 package controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RegistroController {
 
   @GetMapping("/registrarse")
-  public String registrarse() {
+  public String registrarse(Model model) {
+	  model.addAttribute("nombre", "App Weather");
 	  return "registro";
 	  
   }
